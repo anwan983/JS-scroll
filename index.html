@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            background-image: linear-gradient(45deg, blue 0%, yellow 100%);
+            height: 500vh;
+        }
+
+        #pasek {
+            width: 0;
+            height: 25px;
+            background-color:black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: .6s, linear;
+
+    </style>
+</head>
+
+<body>
+    <div id="pasek"></div>
+    
+    <script>
+        const bar = document.getElementById("pasek");
+        const statusBar = function() {
+       const currentScroll = (window.scrollY / (document.documentElement.offsetHeight - window.innerHeight)) * 100;
+            
+        bar.style.width = currentScroll + "%";
+    
+        }
+        window.addEventListener("scroll", statusBar);
+
+    </script>
+</body>
+
+</html>
